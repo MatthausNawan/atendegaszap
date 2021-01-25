@@ -33,7 +33,6 @@ class PedirAguaConversation extends Conversation
         }
 
         $this->askQuantity();
-
     }
 
 
@@ -69,7 +68,7 @@ class PedirAguaConversation extends Conversation
 
             $this->ask("Qual forma de Pagamento: 1-Dinheiro(a vista) \n2-Cartao de Crédito \n3-Cartao de Débito", function (Answer $answer) {
 
-                $possibles = array('1','2','3');
+                $possibles = array('1', '2', '3');
                 $pm = $answer->getText();
 
                 if (!in_array($pm, $possibles)) {
@@ -77,7 +76,7 @@ class PedirAguaConversation extends Conversation
                 }
 
                 switch ($pm) {
-                    case "1" :
+                    case "1":
                         return $this->say('Pagamento a Vista');
                         break;
                     case "2":
@@ -87,10 +86,8 @@ class PedirAguaConversation extends Conversation
                         return $this->say('Pagamento cartao de debito');
                         break;
                 }
-
             });
         });
-
     }
 
     /**
